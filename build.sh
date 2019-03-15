@@ -1,1 +1,1 @@
-go build ./transfer_tracker/tracker.go
+go build ./server/balance_server.go

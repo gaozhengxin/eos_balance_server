@@ -1,4 +1,4 @@
-package main
+package tracker
 
 import (
 	"../dao"
@@ -18,7 +18,7 @@ import (
 var dbPath string
 var err error
 
-func main() {
+func Run () {
 
 	dbpath := flag.String("dbpath", "./data", "database path")
 	reinit := flag.Bool("reinit", false, "reinit")
@@ -59,7 +59,7 @@ func main() {
 		}
 		transfers := scan(pos)
 		updateBalances(transfers)
-		time.Sleep(time.Duration(300)*time.Second)
+		time.Sleep(time.Duration(60)*time.Second)
 	}
 }
 

@@ -9,6 +9,10 @@ var dbPath = config.DbPath
 var db *leveldb.DB
 
 func init () {
+	Open()
+}
+
+func Open () {
 	var err error
 	db, err = leveldb.OpenFile(dbPath, nil)
 	if err != nil {
@@ -16,7 +20,7 @@ func init () {
 	}
 }
 
-func Close(db *leveldb.DB) {
+func Close () {
 	if r := recover(); r != nil {
 		log.Println(r)
 	}
