@@ -4,17 +4,21 @@ import (
 	"../dao"
 	"../transfer_tracker"
 	"encoding/json"
+	"flag"
+	"fmt"
 	"log"
 	"net/http"
 )
 
 func main () {
-	port := "1234"
-	path := "0.0.0.0:" + port
+	port := flag.String("port","1234","port")
+	flag.Parse()
+	path := "0.0.0.0:" + *port
 	defer dao.Close()
 	go tracker.Run()
 	http.HandleFunc("/get_balance", GetBalance)
-	http.ListenAndServe(path, nil)
+	go http.ListenAndServe(path, nil)
+	fmt.Printf("service is running on %s\n", path)
 	select{}
 }
 
