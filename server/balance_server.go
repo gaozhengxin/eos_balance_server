@@ -12,10 +12,12 @@ import (
 
 func main () {
 	port := flag.String("port","1234","port")
+	dbpath := flag.String("dbpath", "./data", "database path")
+	reinit := flag.Bool("reinit", false, "reinit")
 	flag.Parse()
 	path := "0.0.0.0:" + *port
 	defer dao.Close()
-	go tracker.Run()
+	go tracker.Run(dbpath,reinit)
 	http.HandleFunc("/get_balance", GetBalance)
 	go http.ListenAndServe(path, nil)
 	fmt.Printf("service is running on %s\n", path)

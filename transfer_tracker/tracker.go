@@ -5,7 +5,6 @@ import (
 	"../config"
 	"../utils"
 	"encoding/json"
-	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -18,12 +17,7 @@ import (
 var dbPath string
 var err error
 
-func Run () {
-
-	dbpath := flag.String("dbpath", "./data", "database path")
-	reinit := flag.Bool("reinit", false, "reinit")
-
-	flag.Parse()
+func Run (dbpath *string, reinit *bool) {
 
 	if *reinit {
 		initDb()
