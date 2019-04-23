@@ -11,7 +11,7 @@ import (
 )
 
 func main () {
-	port := flag.String("port","1234","port")
+	port := flag.String("port","7000","port")
 	dbpath := flag.String("dbpath", "./data", "database path")
 	reinit := flag.Bool("reinit", false, "reinit")
 	flag.Parse()

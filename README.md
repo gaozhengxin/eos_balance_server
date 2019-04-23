@@ -21,5 +21,5 @@ For the first time, run with `--reinit=true`.
 * `port`: listening port, default 1234
 ### http api
 ```
-http://0.0.0.0:1234/get_balance?user_key=1a2b3c4d5e6f
+http://0.0.0.0:1234/get_balance?user_key=drefigvhv1ywn2yvjpgnu53extxb1xi4l1
 ```
