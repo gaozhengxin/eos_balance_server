@@ -53,7 +53,7 @@ func Run (dbpath *string, reinit *bool) {
 		}
 		transfers := scan(pos)
 		updateBalances(transfers)
-		time.Sleep(time.Duration(60)*time.Second)
+		time.Sleep(time.Duration(15)*time.Second)
 	}
 }
 
@@ -76,7 +76,7 @@ func scan(pos int) []transfer {
 		if l < offset + 1 {
 			almostutd = true
 		}
-		time.Sleep(time.Duration(2000000))
+		time.Sleep(time.Duration(1000000))
 	}
 	return transfers
 }
