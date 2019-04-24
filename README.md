@@ -1,20 +1,23 @@
 # eos_balance_server
-### build
+### clone
 ```
 $ git clone https://github.com/gaozhengxin/eos_balance_tracker.git
-$ cd eos_balance_tracker
-$ ./build.sh
 ```
 ### config
 Edit config/config.go.
 * `EOS_ACCOUNT`: owner's account
 * `NODEOS`: api path of a nodeos configurated `filter_on=*` (allowing to retrieve transactions)
 Rebuild program.
+### build
+```
+$ cd eos_balance_tracker
+$ go build ./server/balance_server.go
+```
 ### run
 ```
 $ ./balance_server
 ```
-For the first time, run with `--reinit=true`.
+For the first time, add flag `--reinit=true`.
 ### flag
 * `reinit`: initiate or rebuild database, default false
 * `dbpath`: absolute or relative path of database
