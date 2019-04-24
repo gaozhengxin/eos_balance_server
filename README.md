@@ -1,7 +1,7 @@
 # eos_balance_server
 ### build
 ```
-$ git clone https://github.com/gaozhengxin/eos_balance_server.git
+$ git clone https://github.com/gaozhengxin/eos_balance_tracker.git
 $ cd eos_balance_server
 $ ./build.sh
 ```
@@ -21,5 +21,5 @@ For the first time, run with `--reinit=true`.
 * `port`: listening port, default 1234
 ### http api
 ```
-http://0.0.0.0:1234/get_balance?user_key=drefigvhv1ywn2yvjpgnu53extxb1xi4l1
+http://0.0.0.0:7000/get_balance?user_key=drefigvhv1ywn2yvjpgnu53extxb1xi4l1
 ```
